@@ -1,0 +1,46 @@
+/* Shared receipt, identical on introduction and magazine pages. */
+:root{--rail:300px}
+aside.rail{position:fixed;inset:0 auto 0 0;left:0;top:0;width:var(--rail);height:100vh;margin:0;padding:20px;background:transparent;color:#343635;border-right:1px solid #b8bab5;box-shadow:none;z-index:10;font-family:'SFMono-Regular','Courier New','PingFang SC',monospace;font-weight:400}
+aside.rail:after{content:none}
+.rail{width:var(--rail);position:fixed;inset:0 auto 0 0;border-right:1px solid #b8bab5;padding:20px;z-index:10}
+.receipt{background:#fafaf8;height:100%;max-height:960px;position:relative;padding:30px 22px 22px;display:flex;flex-direction:column;box-shadow:1px 2px 3px #00000008;overflow:hidden}
+.receipt:after,.thermal:after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.13;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.88' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23777' filter='url(%23n)' opacity='.8' d='M0 0h180v180H0z'/%3E%3C/svg%3E")}
+.receipt nav{z-index:1;position:relative}
+.receipt nav a{display:block;font-size:16px;padding:10px 0;white-space:nowrap;letter-spacing:1px}
+.receipt nav a span{font-size:14px;margin-right:10px}
+.receipt nav .about-link{font-size:22px;display:table;padding:0 0 6px}
+.receipt nav a.active{ text-decoration:underline;text-underline-offset:7px;text-decoration-thickness:1px}
+.receipt nav a:hover{color:#111}
+.perforation{border-top:1px dashed #80847e;margin:23px 0 20px}
+.thermal{position:relative;flex:1;min-height:140px;display:flex;align-items:center;justify-content:center;margin:26px -6px 16px;overflow:hidden;filter:grayscale(1) contrast(1.25);background:#f1f1ed}
+.thermal img.portrait-small{height:100%;max-height:100%;width:100%;object-fit:contain;mix-blend-mode:multiply}
+.thermal:after{opacity:.38}
+.receipt-bottom{margin-top:auto}
+.barcode{height:34px;background:repeating-linear-gradient(90deg,#50534f 0 2px,transparent 2px 4px,#50534f 4px 5px,transparent 5px 8px,#50534f 8px 12px,transparent 12px 14px,#50534f 14px 15px,transparent 15px 19px,#50534f 19px 24px,transparent 24px 26px);width:100%}
+.serial{font-size:10px;letter-spacing:1px;text-align:center;margin-top:10px;color:#777}
+.receipt{padding-top:22px}
+.thermal{margin-top:14px}
+.perforation{margin:17px 0 13px}
+.receipt nav a{padding:8px 0}
+.rail{padding:15px}
+.receipt{padding-left:17px;padding-right:17px}
+.receipt:after{opacity:.065}
+.thermal{background:transparent;filter:none}
+.thermal:after{opacity:.18;background:repeating-linear-gradient(0deg,transparent 0 31px,#f6f3e9a0 31px 32px,transparent 32px 63px)}
+.thermal .thermal-dots{width:100%;height:100%;object-fit:contain;image-rendering:pixelated;mix-blend-mode:multiply}
+.thermal img[hidden]{display:none}
+.receipt nav{color:#363831;text-shadow:.35px 0 #36383166}
+.receipt nav:after{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 19px,#f6f3e965 19px 19.6px,transparent 19.6px 32px)}
+.rail .receipt{height:100%;max-height:960px}.rail .barcode{margin-top:0}.rail .thermal{margin:26px -6px 16px}.rail a{color:inherit;text-decoration:none}.rail a:focus-visible{outline:2px solid #257793;outline-offset:5px}
+.rail .thermal-dots{width:100%;height:100%;object-fit:contain;image-rendering:pixelated;mix-blend-mode:multiply}
+@media(max-width:1150px){:root{--rail:250px}aside.rail{padding:15px}.rail .receipt{padding-left:17px;padding-right:17px}}
+@media(max-height:750px){.rail .receipt{padding-top:22px}.rail .thermal{margin-top:14px}.rail .perforation{margin:17px 0 13px}.rail .receipt nav a{padding:8px 0}}
+
+.receipt{background:#f6f3e9;box-shadow:2px 7px 12px #38362b12,inset -3px 0 8px #9f997716;clip-path:polygon(0 0,100% 0,100% calc(100% - 5px),96% 100%,92% calc(100% - 4px),88% 100%,84% calc(100% - 4px),80% 100%,76% calc(100% - 4px),72% 100%,68% calc(100% - 4px),64% 100%,60% calc(100% - 4px),56% 100%,52% calc(100% - 4px),48% 100%,44% calc(100% - 4px),40% 100%,36% calc(100% - 4px),32% 100%,28% calc(100% - 4px),24% 100%,20% calc(100% - 4px),16% 100%,12% calc(100% - 4px),8% 100%,4% calc(100% - 4px),0 100%)}
+.rail .receipt{padding:30px 22px 22px}.rail .perforation{margin:23px 0 20px}.rail .receipt nav a{padding:10px 0}.rail .receipt nav .about-link{padding:0 0 6px}
+@media(max-width:1150px){.rail .receipt{padding-left:17px;padding-right:17px}}
+@media(max-height:750px){.rail .receipt{padding-top:22px}.rail .perforation{margin:17px 0 13px}.rail .receipt nav a{padding:8px 0}}
+/* User-selected irregular crumpled paper, composed as a web texture. */
+.rail .receipt{padding-bottom:43px;background-color:#f6f3e9;background-image:none;box-shadow:inset 3px 0 7px #82785712,inset -6px 0 12px #786d4920}
+.rail .receipt:before{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background-image:url('assets/crumpled-paper-reference.png');background-repeat:no-repeat;background-size:auto 124%;background-position:center top;mix-blend-mode:multiply;opacity:.7}
+.paper-curl{position:absolute;z-index:3;pointer-events:none;bottom:4px;left:0;right:0;height:26px;border-radius:0 0 45% 10%;background:linear-gradient(176deg,transparent 0 12%,#a89b7438 30%,#e9e3d2 47%,#fffdf3 61%,#d8d0b9 83%,#80765d65);box-shadow:0 -5px 9px #8776510b;transform:skewY(-1.3deg);transform-origin:left bottom}

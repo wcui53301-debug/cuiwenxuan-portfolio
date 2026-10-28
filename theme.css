@@ -1,0 +1,60 @@
+/* Black backdrop; printed paper and original artwork keep their own colors. */
+body{background:#000}
+aside.rail{border-right-color:#303030}
+.bio{color:#f2f0e9}
+.bio .english,.bio .description,.bio .email{color:#d4d3cb}
+.note{color:#a1a49e}
+.hero-copy{color:#f2f0e9}
+.hero-copy p,.hero-copy small{color:#b9beb8}
+.hero-copy .companies{color:#d5d9d0;border-top-color:#535951}
+.hero-copy .read-issue{border-bottom-color:#818a7f}
+.issue-contents{border-top-color:#424740}
+.issue-contents>small{color:#a1aaa0}
+.issue-contents a{color:#e0e4dc}
+.issue-contents b{color:#acbbae}
+.table{background:#000}
+.intro-greeting{background:radial-gradient(ellipse at center,#11111120,#00000055)}
+/* Kraft-paper identity shared by the opening, receipt, portrait rim, and cursor. */
+.rail .receipt{background-color:#c4b595;background-image:none}
+.rail .receipt:before{background-image:url('assets/kraft-paper.png');background-size:auto 124%;background-position:center top;mix-blend-mode:multiply;opacity:.83}
+.rail .receipt:after{opacity:.05}
+.paper-curl{background:linear-gradient(176deg,transparent 0 12%,#77644738 30%,#c3b394 47%,#e2d2b0 61%,#b3a17d 83%,#665b4365)}
+.rail .thermal:after,.receipt nav:after{opacity:.12}
+.portrait-paper{position:relative}
+.portrait-paper:before,.portrait-paper:after{content:'';position:absolute;inset:0;pointer-events:none;background:url('assets/kraft-paper.png') center top/auto 124%;mask-size:100% 100%;mask-repeat:no-repeat}
+.portrait-paper:before{mask-image:url('assets/portrait-silhouette.svg');transform:scale(1.018);z-index:-1}
+.portrait-paper:after{mask-image:url('assets/portrait-paper-rim.svg');z-index:2}
+.intro-pending .rail,.intro-pending #main{filter:none;opacity:1}
+.intro-pending body,.paper-crumpling body{overflow:hidden}
+.intro-greeting{background:#b7a88a url('assets/kraft-paper.png') center top/cover;color:#322b20;gap:22px;transition:none}
+/* cover the viewport with the unlettered upper 82% of the reference */
+.intro-greeting{background-size:auto max(121.952vh,216.39vw)}
+.intro-greeting[hidden]{display:none!important}
+.intro-greeting:before{content:'';position:absolute;inset:0;background:url('assets/kraft-paper.png') center top/cover;pointer-events:none;opacity:0}
+.intro-hello,.intro-invitation{opacity:0;animation:paper-hello 1.3s ease .25s forwards;position:relative}
+.intro-invitation{animation-delay:.8s;color:#403627}
+.intro-greeting:focus-visible .intro-invitation{outline-color:#655539}
+@keyframes paper-hello{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.crumple-canvas{position:fixed;inset:0;width:100vw;height:100vh;z-index:101;pointer-events:none}
+.paper-crumpling .rail,.paper-crumpling #main{filter:none;opacity:1;transition:none}
+.paper-ball{position:fixed;left:-13px;top:-13px;width:26px;height:26px;z-index:150;pointer-events:none;opacity:0;will-change:transform;transition:opacity .25s;border-radius:43% 57% 47% 53% / 56% 41% 59% 44%;background:radial-gradient(circle at 29% 24%,#fff7,transparent 42%,#392c2080 95%),url('assets/kraft-paper.png') center 40%/90px auto;box-shadow:inset -2px -3px 4px #3e30294d,2px 4px 5px #0005;clip-path:polygon(18% 8%,44% 0,70% 6%,91% 24%,100% 51%,89% 76%,70% 96%,41% 100%,13% 83%,0 56%,5% 27%)}
+.paper-ball.visible{opacity:1}.paper-ball.pressed{filter:brightness(.8)}
+@media(prefers-reduced-motion:reduce){.intro-hello,.intro-invitation{opacity:1;animation:none}.paper-ball{display:none}}
+@font-face{font-family:'Source Han Serif SC';src:url('fonts/SourceHanSerifSC-Regular.otf') format('opentype');font-weight:200 900;font-style:normal;font-display:swap}
+body,button,a,.rail .receipt nav a,.bio h1,.description,.english,.email,.hero-copy,.hero-copy small,.book small,.book h1,.book .sub,.book .spine,.page h3,.page h4,.page p,.page blockquote,.running,.folio,.note,.serial,.issue-contents,.issue-contents>small,.issue-contents b,.table-label,.end,.intro-greeting{font-family:'Source Han Serif SC',serif}
+.rail .receipt{background-color:#e1daca}
+.rail .receipt:before{background-image:linear-gradient(#ffffff80,#ffffff80),url('assets/kraft-paper.png');opacity:1;mix-blend-mode:normal}
+.rail .receipt nav,.rail .receipt-bottom{z-index:4;position:relative}.rail .thermal{z-index:3}
+.portrait-paper:before,.portrait-paper:after{background-image:linear-gradient(#ffffff80,#ffffff80),url('assets/kraft-paper.png')}
+.intro-greeting{background-image:linear-gradient(#ffffff80,#ffffff80),url('assets/kraft-paper.png')}
+.paper-curl{background:linear-gradient(176deg,transparent 0 12%,#c4bba638 30%,#e1d9c9 47%,#f0e8d7 61%,#d8cfbb 83%,#b2aaa165)}
+.paper-ball{background-image:radial-gradient(circle at 29% 24%,#fff7,transparent 42%,#392c2040 95%),linear-gradient(#ffffff80,#ffffff80),url('assets/kraft-paper.png')}
+.intro-hello{width:clamp(260px,28vw,400px);height:auto;line-height:0;padding:0;letter-spacing:0}
+.intro-hello img{display:block;width:100%;height:auto}
+.intro-invitation{font-size:17px;letter-spacing:3px}
+.rail .thermal{mix-blend-mode:multiply}
+
+/* New portrait asset in the original homepage layout. */
+.portrait-paper.portrait-photo{aspect-ratio:2/3;max-width:100%;filter:none}
+.portrait-photo:before,.portrait-photo:after{display:none}
+.portrait-paper.portrait-photo img{mask-image:none;clip-path:none;object-fit:contain}
